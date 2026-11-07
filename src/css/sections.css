@@ -62,32 +62,37 @@
 
 /* Only the footer wordmark uses this weight, so it is declared here and not preloaded. */
 @font-face { font-family: 'Overused Grotesk'; src: url(../assets/fonts/overused-grotesk-800.woff2) format('woff2'); font-weight: 800; font-display: swap; }
-.foot { --foot-soft: color-mix(in srgb, var(--pale) 78%, var(--abyss)); display: grid; justify-items: center; gap: 0; background: var(--abyss); color: var(--pale); padding: clamp(32px, 4vw, 56px) var(--margin) clamp(24px, 2.5vw, 32px); text-align: center; }
+.foot { --foot-soft: color-mix(in srgb, var(--pale) 78%, var(--abyss)); position: relative; z-index: 1; display: grid; justify-items: center; gap: 8px; background: var(--abyss); color: var(--pale); padding: clamp(32px, 4vw, 56px) var(--margin) clamp(24px, 2.5vw, 32px); text-align: center; }
 .foot a { text-decoration: none; transition: color var(--t-hover) ease, background-color var(--t-hover) ease; }
 @media (hover: hover) and (pointer: fine) {
   .foot a:hover { color: var(--white); }
   .foot__social a:hover { background: var(--deep); }
 }
+/* No box here at the owner's request; keyboard users follow the same change that hover shows. */
+.foot a:focus-visible { outline: none; color: var(--white); }
+.foot__social a:focus-visible { background: var(--deep); }
 /* The footer closes the page, so the bar steps aside; scrolling up is the visitor asking for it back. */
-.bar { transition: color 300ms ease, background-color 300ms ease, translate 300ms var(--ease-out); }
-.bar.is-tucked:not(:focus-within) { translate: 0 -100%; }
+.bar { transition: color 300ms ease, background-color 300ms ease, translate 300ms var(--ease-out), visibility 300ms; }
+/* Hidden, not just moved: an off-screen bar would otherwise still take keyboard focus. */
+.bar.is-tucked { translate: 0 -100%; visibility: hidden; }
 @media (prefers-reduced-motion: reduce) { .bar { transition: none; } }
 /* Full bleed so centring holds if the word is wider than the content. The block padding keeps the
-   gradient painted over the whole letters: background-clip stops at the box, and 0.82 line height is shorter than they are. */
-.foot__name { position: relative; justify-self: stretch; margin-inline: calc(var(--margin) * -1); padding-block: 0.1em; margin-block: -0.1em; white-space: nowrap; user-select: none; font: 800 clamp(96px, 29.5vw, 480px)/0.82 var(--font-display); letter-spacing: -0.02em; color: transparent; background: linear-gradient(90deg, var(--ocean), var(--pale), var(--ocean)) 0 0 / 200% 100%; -webkit-background-clip: text; background-clip: text; } /* taste-skill-ignore: gradient requested by the owner. */
+   gradient painted over the whole letters: background-clip stops at the box, and 0.82 line height is shorter than they are.
+   The text's hit area runs well past that short line and over the links below, so the word must not take clicks. */
+.foot__name { position: relative; pointer-events: none; justify-self: stretch; margin-inline: calc(var(--margin) * -1); padding-block: 0.1em; margin-block: -0.1em; white-space: nowrap; user-select: none; font: 800 clamp(96px, 29.5vw, 480px)/0.82 var(--font-display); letter-spacing: -0.02em; color: transparent; background: linear-gradient(90deg, var(--ocean), var(--pale), var(--ocean)) 0 0 / 200% 100%; -webkit-background-clip: text; background-clip: text; } /* taste-skill-ignore: gradient requested by the owner. */
 @media (prefers-reduced-motion: no-preference) {
   .foot__name { animation: foot-tide 12s ease-in-out infinite alternate; }
 }
 @keyframes foot-tide { to { background-position: 100% 0; } }
 .foot__digits { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.foot__pitch { margin-block: clamp(8px, 1vw, 16px) clamp(4px, 0.5vw, 8px); text-wrap: balance; font: 400 var(--step-lead)/1.32 var(--font-display); }
-.foot__links { display: flex; justify-content: center; gap: 0 clamp(1rem, 3vw, 2.5rem); font-size: var(--step-small); color: var(--foot-soft); }
+.foot__pitch { text-wrap: balance; font: 400 clamp(20px, 2.4vw, 32px)/1.32 var(--font-display); }
+.foot__links { display: flex; justify-content: center; gap: 0 clamp(1rem, 3vw, 2.5rem); font-size: 15px; color: var(--foot-soft); }
 .foot__links a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; }
 @media (max-width: 479px) {
   .foot__links { display: grid; grid-template-columns: 1fr 1fr; justify-self: stretch; }
 }
-.foot__legal { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0 1rem; font-size: var(--step-small); color: var(--foot-soft); }
+.foot__legal { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0 1rem; font-size: 15px; color: var(--foot-soft); }
 .foot__social { display: flex; color: var(--pale); }
 .foot__social a { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; }
-.foot__credit { white-space: nowrap; font: 700 clamp(14px, 4.4vw, 24px)/1.3 var(--font-display); }
+.foot__credit { white-space: nowrap; font: 700 clamp(14px, 1.4vw, 18px)/1.3 var(--font-display); }
 .foot__credit a { display: inline-block; padding-block: calc((44px - 1.3em) / 2); text-decoration: none; }

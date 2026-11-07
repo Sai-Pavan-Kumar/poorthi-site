@@ -82,7 +82,7 @@
     pen.clearRect(0, 0, canvas.width, canvas.height);
     pen.setTransform(ratio, 0, 0, ratio, 0, 0);
     pen.font = `500 ${CELL_HEIGHT - 3}px ${getComputedStyle(word).fontFamily}`;
-    pen.fillStyle = '#FFFFFF';
+    pen.fillStyle = getComputedStyle(word).getPropertyValue('--white');
     for (const cell of cells) {
       if (now >= cell.flipAt) {
         cell.digit = randomDigit();
