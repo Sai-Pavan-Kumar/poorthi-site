@@ -62,7 +62,7 @@
 
 /* Only the footer wordmark uses this weight, so it is declared here and not preloaded. */
 @font-face { font-family: 'Overused Grotesk'; src: url(../assets/fonts/overused-grotesk-800.woff2) format('woff2'); font-weight: 800; font-display: swap; }
-.foot { --foot-soft: color-mix(in srgb, var(--pale) 78%, var(--abyss)); display: grid; justify-items: center; gap: clamp(8px, 1.5vw, 24px); background: var(--abyss); color: var(--pale); padding: clamp(32px, 4vw, 56px) var(--margin) clamp(24px, 2.5vw, 32px); text-align: center; }
+.foot { --foot-soft: color-mix(in srgb, var(--pale) 78%, var(--abyss)); display: grid; justify-items: center; gap: 0; background: var(--abyss); color: var(--pale); padding: clamp(32px, 4vw, 56px) var(--margin) clamp(24px, 2.5vw, 32px); text-align: center; }
 .foot a { text-decoration: none; transition: color var(--t-hover) ease, background-color var(--t-hover) ease; }
 @media (hover: hover) and (pointer: fine) {
   .foot a:hover { color: var(--white); }
@@ -80,7 +80,7 @@
 }
 @keyframes foot-tide { to { background-position: 100% 0; } }
 .foot__digits { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.foot__pitch { text-wrap: balance; font: 400 var(--step-head)/1.16 var(--font-display); letter-spacing: -0.015em; }
+.foot__pitch { margin-block: clamp(8px, 1vw, 16px) clamp(4px, 0.5vw, 8px); text-wrap: balance; font: 400 var(--step-lead)/1.32 var(--font-display); }
 .foot__links { display: flex; justify-content: center; gap: 0 clamp(1rem, 3vw, 2.5rem); font-size: var(--step-small); color: var(--foot-soft); }
 .foot__links a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; }
 @media (max-width: 479px) {
