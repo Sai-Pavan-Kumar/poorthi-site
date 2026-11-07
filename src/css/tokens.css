@@ -1,5 +1,7 @@
-@font-face { font-family: Outfit; src: url(../assets/fonts/outfit.woff2) format('woff2'); font-weight: 100 900; font-display: swap; }
-@font-face { font-family: Switzer; src: url(../assets/fonts/switzer.woff2) format('woff2'); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Overused Grotesk'; src: url(../assets/fonts/overused-grotesk-400.woff2) format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Overused Grotesk'; src: url(../assets/fonts/overused-grotesk-500.woff2) format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Overused Grotesk'; src: url(../assets/fonts/overused-grotesk-600.woff2) format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Overused Grotesk'; src: url(../assets/fonts/overused-grotesk-700.woff2) format('woff2'); font-weight: 700; font-display: swap; }
 
 /* Values come from The SurfBoard design system. Nothing below this file uses raw colours. */
 :root {
@@ -15,8 +17,8 @@
   --tide: linear-gradient(180deg, var(--ocean) 0%, var(--deep) 58%, var(--abyss) 100%); /* taste-skill-ignore */
   --lit: linear-gradient(145deg, var(--ocean) 0%, var(--deep) 100%); /* taste-skill-ignore */
 
-  --font-display: Outfit, system-ui, sans-serif;
-  --font-text: Switzer, system-ui, sans-serif;
+  --font-display: 'Overused Grotesk', system-ui, sans-serif;
+  --font-text: var(--font-display);
 
   /* The whole page has five sizes. If two things feel close, they are the same size. */
   --step-small: 0.875rem;

@@ -37,7 +37,7 @@ window.AsciiWater = (() => {
       sheet.height = cellHeight * ratio * DIGITS.length;
       const pen = sheet.getContext('2d');
       pen.scale(ratio, ratio);
-      pen.font = `600 ${cellHeight - 4}px Outfit, system-ui, sans-serif`;
+      pen.font = `600 ${cellHeight - 4}px 'Overused Grotesk', system-ui, sans-serif`;
       pen.textAlign = 'center';
       pen.textBaseline = 'middle';
       for (let level = 0; level < LEVELS; level += 1) {
