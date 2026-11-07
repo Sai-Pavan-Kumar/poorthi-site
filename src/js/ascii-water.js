@@ -19,7 +19,7 @@ window.AsciiWater = (() => {
 
   function create(canvas, stage) {
     const context = canvas.getContext('2d');
-    const clearing = stage.querySelector('.hero__foot, .close__action');
+    const clearing = stage.querySelector('.hero__foot');
     let sheet = null;
     let cellWidth = 0;
     let cellHeight = 0;

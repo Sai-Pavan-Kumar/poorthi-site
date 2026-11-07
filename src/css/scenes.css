@@ -27,7 +27,7 @@
 .win__submit.is-away { opacity: 0; }
 
 .fill.is-live { height: 420svh; padding: 0; display: block; }
-.fill.is-live .fill__stage { position: sticky; top: 0; height: 100svh; padding: 0 var(--margin); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: center; overflow: clip; }
+.fill.is-live .fill__stage { position: sticky; top: 0; height: 100lvh; padding: 0 var(--margin); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: center; overflow: clip; }
 .fill.is-live .fill__say { grid-column: 1 / span 6; gap: 2rem; }
 .fill.is-live .fill__beats { display: grid; }
 .fill.is-live .beat { grid-area: 1 / 1; align-content: start; }
@@ -54,7 +54,8 @@
 }
 /* Short screens keep the story and drop two rows of the form, not the words. */
 @media (max-height: 780px) { .fill.is-live .win__field--extra { display: none; } }
-@media (max-height: 680px) and (max-width: 860px) { .fill.is-live .fill__stage { padding-top: 4.25rem; row-gap: 0.5rem; } .fill.is-live .beat p { font-size: var(--step-small); } .fill.is-live .win__title { display: none; } .fill.is-live .win { gap: 0.25rem; } .fill.is-live .win__field > i { min-height: 38px; } .fill.is-live .win__foot { margin-top: 0; } }
+@media (max-height: 680px) and (max-width: 860px) { .fill.is-live .fill__stage { padding-top: 4.25rem; row-gap: 0.5rem; } .fill.is-live .beat p { font-size: var(--step-small); } .fill.is-live .win__title { display: none; } .fill.is-live .win { gap: 0.25rem; } .fill.is-live .win__field > i { min-height: 38px; } .fill.is-live .win { padding: 0.75rem; } .fill.is-live .win__field { gap: 0.125rem; } .fill.is-live .win__field > i { min-height: 34px; } .fill.is-live .win__foot { margin-top: 0; min-height: 36px; } }
+@media (max-height: 600px) and (max-width: 860px) { .fill.is-live .win__field--tight { display: none; } }
 
 /* Forms scene: one saved number, rewritten in place for each form that asks. */
 .forms { background: var(--ocean) var(--lit); color: var(--white); padding-block: var(--section); row-gap: 3rem; }
@@ -65,7 +66,7 @@
 .forms__note { max-width: 48ch; }
 
 .forms.is-live { height: 400svh; padding: 0; display: block; }
-.forms.is-live .forms__stage { position: sticky; top: 0; height: 100svh; padding: 6rem var(--margin) 3rem; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: auto 1fr auto; column-gap: var(--gutter); overflow: clip; }
+.forms.is-live .forms__stage { position: sticky; top: 0; height: 100lvh; padding: 6rem var(--margin) calc(3rem + 100lvh - 100svh); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: auto 1fr auto; column-gap: var(--gutter); overflow: clip; }
 .forms.is-live .forms__head { grid-column: 1 / -1; }
 .forms.is-live .forms__list { grid-column: 1 / -1; align-self: center; display: grid; gap: 0; overflow: clip; margin-left: -0.5rem; padding-left: 0.5rem; }
 /* Room for the commas' tails, so a resting value never shows a sliver of its neighbour. */

@@ -56,6 +56,16 @@
   tides.forEach((section) => fullWatcher.observe(section, { attributes: true, attributeFilter: ['data-full'] }));
   updateHeader();
 
+  const footer = document.querySelector('.foot');
+  let lastY = scrollY;
+  addEventListener('scroll', () => {
+    const y = scrollY;
+    const footerOnScreen = footer.getBoundingClientRect().top < innerHeight;
+    if (!footerOnScreen || y < lastY) bar.classList.remove('is-tucked');
+    else if (y > lastY) bar.classList.add('is-tucked');
+    lastY = y;
+  }, { passive: true });
+
   // Site names light in reading order as the sentence passes through the screen.
   const list = document.querySelector('[data-sites]');
   if (list && !calm) {

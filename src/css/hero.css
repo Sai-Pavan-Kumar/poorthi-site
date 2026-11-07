@@ -1,9 +1,11 @@
-/* Hero and close are the same held stage: scrolling raises the water until the page is
-   full. The product's promise, acted out twice. Without motion each is one plain screen. */
-.tide { height: 100svh; }
-.tide__stage { position: relative; height: 100svh; overflow: clip; background: var(--paper); }
+/* A held stage: scrolling raises the water until the page is full. The product's promise,
+   acted out. Without motion it is one plain screen. */
+/* Stages fill the largest viewport so no gap opens when a phone hides its browser bars;
+   their content is placed in svh so it still fits while the bars are showing. */
+.tide { height: 100lvh; }
+.tide__stage { position: relative; height: 100lvh; overflow: clip; background: var(--paper); }
 @media (prefers-reduced-motion: no-preference) {
-  .js .tide { height: 170svh; }
+  .js .tide { height: 170lvh; }
   .js .tide__stage { position: sticky; top: 0; }
 }
 
@@ -45,18 +47,10 @@
 
 @media (max-width: 860px) {
   .hero { --rest: 36svh; }
-  .drift__chip { top: auto; bottom: var(--y-phone); left: auto; translate: none; }
+  .drift__chip { top: auto; bottom: calc(var(--y-phone) + 100lvh - 100svh); left: auto; translate: none; }
   .drift__chip:nth-child(odd) { left: var(--margin); }
   .drift__chip:nth-child(even) { right: var(--margin); }
   .drift__chip:nth-child(n+3) { display: none; }
 }
 @media (max-height: 760px) and (max-width: 860px) { .drift { display: none; } }
 @media (max-height: 640px) and (min-width: 861px) { .drift__chip:nth-child(n+3) { display: none; } }
-
-.close .water { clip-path: inset(0); }
-.close .tide__title { top: 46%; transform: translateY(-50%); }
-.close__action { position: absolute; left: var(--margin); top: calc(46% + var(--step-display) + 2rem); }
-@media (prefers-reduced-motion: no-preference) {
-  .js .close__action { opacity: 0; translate: 0 18px; transition: opacity 500ms var(--ease-out), translate 800ms var(--ease-expo); }
-  .js .close.is-up .close__action { opacity: 1; translate: 0 0; }
-}

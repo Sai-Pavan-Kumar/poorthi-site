@@ -114,7 +114,7 @@
             <div class="win__field is-filled" data-value="9876543210"><span>Mobile</span><i>9876543210</i></div>
             <div class="win__field is-filled win__field--extra" data-value="30 days"><span>Notice period</span><i>30 days</i></div>
             <div class="win__field is-filled win__field--extra" data-value="8.5"><span>Expected CTC in LPA</span><i>8.5</i></div>
-            <div class="win__field is-filled" data-value="2.5 years"><span>Total experience</span><i>2.5 years</i></div>
+            <div class="win__field is-filled win__field--tight" data-value="2.5 years"><span>Total experience</span><i>2.5 years</i></div>
             <div class="win__field is-needed" data-value=""><span>Name of a reference</span><i></i></div>
             <div class="win__foot"><p class="win__status">5 of 6 filled. One needs you.</p><span class="win__submit">Submit</span></div>
           </div>
@@ -174,31 +174,25 @@
       <div class="faq__row" data-reveal="text"><h3 class="t-lead col-a">Does it work without internet?</h3><p class="col-b">Filling needs no internet of its own, and saving your details works offline. The job site itself still has to load.</p></div>
       <div class="faq__row" data-reveal="text"><h3 class="t-lead col-a">What if it fills something wrong?</h3><p class="col-b">Every filled field is highlighted, a review list shows what happened, and Undo restores the form as it was.</p></div>
     </section>
-
-    <section class="tide close" data-tide>
-      <div class="tide__stage">
-        <h2 class="tide__title t-display">
-          <span class="line line--t"><span>Type it one</span></span>
-          <span class="line line--l"><span>last time.</span></span>
-        </h2>
-        <div class="water" data-water aria-hidden="true">
-          <canvas class="ascii" data-ascii></canvas>
-          <p class="tide__title tide__title--under t-display">
-            <span class="line line--t"><span>Type it one</span></span>
-            <span class="line line--l"><span>last time.</span></span>
-          </p>
-        </div>
-        <a class="close__action button button--paper" href="{{CTA_HREF}}">{{CTA_LABEL}}</a>
-      </div>
-    </section>
   </main>
 
-  <footer class="foot grid" data-ink="#0D0D1A">
-    <p class="col-a">Made by The SurfBoard, an independent software studio in Hyderabad.</p>
-    <div class="foot__end col-b"><a href="#top">Back to top</a><a href="https://thesurfboard.in">thesurfboard.in</a></div>
-    <p class="foot__name" aria-hidden="true">{{NAME}}</p>
-    <span class="col-a">No AI. No account. No server.</span>
-    <span class="col-b">Hyderabad, 2026</span>
+  <footer class="foot" data-ink="#FFFFFF">
+    <p class="foot__name" aria-hidden="true">{{NAME}}<canvas class="foot__digits" data-foot-digits></canvas></p>
+    <p class="foot__pitch">Job forms, filled.</p>
+    <nav class="foot__links" aria-label="Footer">
+      <a href="#try">Try it</a>
+      <a href="#how">How it works</a>
+      <a href="#questions">Questions</a>
+      <a href="#top">Back to top</a>
+    </nav>
+    <div class="foot__legal">
+      <p>&copy; 2026 {{NAME}}. All rights reserved.</p>
+      <div class="foot__social">
+        <a href="https://www.instagram.com/the_surfboard" aria-label="The SurfBoard on Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+        <a href="https://www.youtube.com/@the_surfboard?sub_confirmation=1" aria-label="The SurfBoard on YouTube"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a>
+      </div>
+    </div>
+    <p class="foot__credit">Made by <a href="https://thesurfboard.in">The SurfBoard</a>. Built for humans.</p>
   </footer>
 
   <script src="js/scrub.js" defer></script>
@@ -209,5 +203,6 @@
   <script src="js/forms-scene.js" defer></script>
   <script src="js/smooth-scroll.js" defer></script>
   <script src="js/page-motion.js" defer></script>
+  <script src="js/foot-digits.js" defer></script>
 </body>
 </html>
