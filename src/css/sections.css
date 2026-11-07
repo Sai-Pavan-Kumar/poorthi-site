@@ -64,4 +64,4 @@
 .foot a { display: inline-flex; align-items: center; min-height: 44px; }
 .foot p, .foot span { display: inline-flex; align-items: center; min-height: 44px; }
 .foot__end { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 2rem; }
-.foot__name { grid-column: 1 / -1; margin-left: -0.03em; font: 700 clamp(5rem, 29vw, 34rem)/0.85 var(--font-display); letter-spacing: -0.05em; color: var(--ocean); }
+.foot__name { grid-column: 1 / -1; margin-left: -0.03em; font: 700 clamp(5rem, 27vw, 34rem)/0.85 var(--font-display); letter-spacing: 0; color: var(--ocean); }

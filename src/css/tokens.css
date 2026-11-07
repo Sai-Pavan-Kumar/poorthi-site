@@ -55,7 +55,7 @@ button, input { font: inherit; color: inherit; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 /* The only three heading voices. */
-.t-display { font: 700 var(--step-display)/1.02 var(--font-display); letter-spacing: -0.03em; }
+.t-display { font: 700 var(--step-display)/1.02 var(--font-display); letter-spacing: -0.01em; }
 .t-head { font: 600 var(--step-head)/1.16 var(--font-display); letter-spacing: -0.015em; }
 .t-lead { font: 600 var(--step-lead)/1.32 var(--font-display); letter-spacing: -0.01em; }
 
