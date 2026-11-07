@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{NAME}}: fill job application forms in one click</title>
+  <meta name="description" content="{{NAME}} is a free Chrome extension that fills job application forms with details saved on your device. No AI, no account, no server.">
+  <link rel="canonical" href="{{SITE_URL}}">
+  <meta property="og:title" content="{{NAME}}: type once, fill always">
+  <meta property="og:description" content="A free Chrome extension that fills job forms from details saved on your device.">
+  <meta property="og:url" content="{{SITE_URL}}">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#005AE0">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/scenes.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "{{NAME}}",
+    "applicationCategory": "BrowserApplication",
+    "operatingSystem": "Chrome",
+    "description": "Fills job application forms with details saved on your device. No AI, no account, no server.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+    "creator": { "@type": "Organization", "name": "The SurfBoard" }
+  }
+  </script>
+</head>
+<body>
+  <header class="bar grid" data-bar>
+    <a class="bar__name" href="#top"><svg class="bar__mark" viewBox="0 0 64 64" aria-hidden="true"><rect x="4" y="6" width="56" height="14" rx="7" fill="currentColor"/><rect x="4" y="25" width="56" height="14" rx="7" fill="currentColor"/><rect x="6.5" y="46.5" width="51" height="9" rx="4.5" fill="none" stroke="currentColor" stroke-width="5"/></svg>{{NAME}}</a>
+    <div class="bar__end">
+      <nav class="bar__links" aria-label="Main">
+        <a href="#try">Try it</a>
+        <a href="#how">How it works</a>
+        <a href="#questions">Questions</a>
+      </nav>
+      <a class="button button--bar" href="{{CTA_HREF}}">{{CTA_LABEL}}</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="tide hero" data-tide>
+      <div class="tide__stage">
+        <h1 class="tide__title t-display">
+          <span class="line line--t"><span>Type once.</span></span>
+          <span class="line line--f"><span>Fill always.</span></span>
+        </h1>
+        <div class="water" data-water aria-hidden="true">
+          <canvas class="ascii" data-ascii></canvas>
+          <p class="tide__title tide__title--under t-display">
+            <span class="line line--t"><span>Type once.</span></span>
+            <span class="line line--f"><span>Fill always.</span></span>
+          </p>
+          <div class="drift" data-ui>
+            <span class="drift__chip" style="--x:50%;--y:62%;--y-phone:9svh;--t:9s;--depth:19svh"><b>Notice period</b> 30 days</span>
+            <span class="drift__chip" style="--x:76%;--y:68%;--y-phone:4svh;--t:11s;--depth:24svh"><b>Expected CTC</b> 8.5 LPA</span>
+            <span class="drift__chip" style="--x:58%;--y:82%;--y-phone:9svh;--t:12s;--depth:22svh"><b>Mobile</b> 98765 43210</span>
+            <span class="drift__chip" style="--x:82%;--y:86%;--y-phone:4svh;--t:10s;--depth:16svh"><b>Experience</b> 2.5 years</span>
+          </div>
+        </div>
+        <div class="hero__foot">
+          <p>{{NAME}} is a free Chrome extension that fills job application forms with details saved on your device.</p>
+          <a class="button button--paper" href="{{CTA_HREF}}">{{CTA_LABEL}}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="try grid" id="try" data-ink="#0D0D1A">
+      <div class="try__ask col-a">
+        <h2 class="t-head" data-rise>Type what a form asks you.</h2>
+        <div class="try__field" data-reveal="text">
+          <label class="try__label" for="ask">A question from a job form</label>
+          <input class="try__input" id="ask" type="text" value="Expected CTC in LPA" autocomplete="off" spellcheck="false" maxlength="60">
+        </div>
+        <div class="try__samples" data-reveal="text">
+          <button type="button" data-sample="Notice period">Notice period</button>
+          <button type="button" data-sample="Current CTC">Current CTC</button>
+          <button type="button" data-sample="Mob no">Mob no</button>
+          <button type="button" data-sample="Name of reference">Name of reference</button>
+          <button type="button" data-sample="Gender">Gender</button>
+          <button type="button" data-sample="Password">Password</button>
+        </div>
+        <p class="try__note" data-reveal="text">This runs in your browser with a sample profile for Asha Rao. Nothing you type here leaves this page.</p>
+      </div>
+      <div class="answer col-b" data-ui data-answer aria-live="polite" data-reveal="panel">
+        <p class="answer__verdict">Fills it</p>
+        <p class="answer__value">8.5</p>
+        <p class="answer__why">Saved as ₹8,50,000 a year. The label says lakhs, so it writes lakhs.</p>
+      </div>
+    </section>
+
+    <section class="fill grid" id="how" data-ink="#FFFFFF" data-fill>
+      <div class="fill__stage col-all">
+        <div class="fill__say">
+          <ol class="fill__steps" aria-hidden="true"><li>Save</li><li>Open</li><li>Fill</li><li>Check</li></ol>
+          <div class="fill__beats">
+            <div class="beat"><h2 class="t-head">First, save your details once.</h2><p>Name, phone, notice period, CTC, resume. It stays in your browser.</p></div>
+            <div class="beat"><h2 class="t-head">Then open any job form.</h2><p>On supported sites a small Fill this form button appears. Nothing happens until you click.</p></div>
+            <div class="beat"><h2 class="t-head">Click once. Watch it land.</h2><p>Every filled field is outlined so you can see exactly what changed.</p></div>
+            <div class="beat"><h2 class="t-head">Last, check what it left.</h2><p>It tells you what it filled and what needs you. Then you press Submit, not it.</p></div>
+          </div>
+        </div>
+        <div class="fill__show" data-ui aria-hidden="true">
+          <div class="win">
+            <p class="win__title">Apply for this job</p>
+            <div class="win__field is-filled" data-value="Asha Rao"><span>Full name</span><i>Asha Rao</i></div>
+            <div class="win__field is-filled" data-value="9876543210"><span>Mobile</span><i>9876543210</i></div>
+            <div class="win__field is-filled win__field--extra" data-value="30 days"><span>Notice period</span><i>30 days</i></div>
+            <div class="win__field is-filled win__field--extra" data-value="8.5"><span>Expected CTC in LPA</span><i>8.5</i></div>
+            <div class="win__field is-filled" data-value="2.5 years"><span>Total experience</span><i>2.5 years</i></div>
+            <div class="win__field is-needed" data-value=""><span>Name of a reference</span><i></i></div>
+            <div class="win__foot"><p class="win__status">5 of 6 filled. One needs you.</p><span class="win__submit">Submit</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why grid" data-ink="#0D0D1A">
+      <h2 class="why__head t-head col-a" data-rise>Careful with what matters.</h2>
+      <div class="why__rows col-b">
+        <div class="why__row">
+          <div data-reveal="text"><h3 class="t-lead">It stays on your device</h3><p>No account, no server and no AI. Your details sit in your own browser, and the extension makes no network calls.</p></div>
+          <div class="frag" data-ui data-reveal="panel"><p class="frag__label">Sent to servers</p><p class="frag__big">Nothing</p></div>
+        </div>
+        <div class="why__row">
+          <div data-reveal="text"><h3 class="t-lead">It never guesses</h3><p>When a label is unclear, the field stays empty and goes on a list for you to check. A blank field is better than a wrong one.</p></div>
+          <div class="frag" data-ui data-reveal="panel"><p class="frag__label">Name of reference</p><div class="frag__field"><span class="frag__caret"></span><span class="frag__tag">Left for you</span></div></div>
+        </div>
+        <div class="why__row">
+          <div data-reveal="text"><h3 class="t-lead">It never presses Submit</h3><p>Passwords, payment details, ID numbers and questions about gender or caste stay yours to answer. The final click is always you.</p></div>
+          <div class="frag" data-ui data-reveal="panel"><span class="frag__submit">Submit<svg class="frag__pointer" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-6 1.5L10.5 20z"/></svg></span><p class="frag__note">The extension stops here.</p></div>
+        </div>
+        <div class="why__row">
+          <div data-reveal="text"><h3 class="t-lead">It learns your answers, and undoes</h3><p>Type a new answer by hand and it offers to save it for next time. Filled something you did not want? One click puts the form back.</p></div>
+          <div class="frag" data-ui data-reveal="panel"><p class="frag__label">Current city</p><div class="frag__field frag__field--undo"><span class="frag__typed">Hyderabad</span></div><span class="frag__undo">Undo</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="forms grid" data-ink="#FFFFFF" data-forms>
+      <div class="forms__stage col-all">
+        <h2 class="forms__head t-head">One detail, written each form's way.</h2>
+        <ul class="forms__list">
+          <li class="forms__item"><p class="forms__ask">Annual CTC</p><p class="forms__value t-display">₹8,50,000</p></li>
+          <li class="forms__item"><p class="forms__ask">Expected CTC in LPA</p><p class="forms__value t-display">8.5</p></li>
+          <li class="forms__item"><p class="forms__ask">Monthly salary</p><p class="forms__value t-display">70,833</p></li>
+          <li class="forms__item"><p class="forms__ask">Mobile, without +91</p><p class="forms__value t-display">9876543210</p></li>
+        </ul>
+        <p class="forms__note">It speaks Indian job forms: notice period, CTC in lakhs or rupees, a +91 number with or without the prefix.</p>
+      </div>
+    </section>
+
+    <section class="sites grid" data-ink="#0D0D1A">
+      <h2 class="t-lead col-all" data-reveal="text">Built for the forms you meet.</h2>
+      <ul class="sites__list t-head col-all" data-sites>
+        <li>Greenhouse</li><li>Lever</li><li>Ashby</li><li>Naukri</li><li>LinkedIn Easy Apply</li><li>SmartRecruiters</li><li>Workday</li>
+      </ul>
+      <p class="col-b" data-reveal="text">On any other site, click Fill this page and it tries the same way.</p>
+    </section>
+
+    <section class="faq grid" id="questions" data-ink="#0D0D1A">
+      <h2 class="t-head col-all" data-rise>Questions</h2>
+      <div class="faq__row" data-reveal="text"><h3 class="t-lead col-a">Is it really free?</h3><p class="col-b">Yes. There is no server to pay for, so there is no bill to pass on to you.</p></div>
+      <div class="faq__row" data-reveal="text"><h3 class="t-lead col-a">Can I install it today?</h3><p class="col-b">Not yet. {{NAME}} is being built now and will arrive on the Chrome Web Store.</p></div>
+      <div class="faq__row" data-reveal="text"><h3 class="t-lead col-a">How is this better than Chrome autofill?</h3><p class="col-b">Chrome handles names and addresses. {{NAME}} also handles notice period, CTC, experience ranges, your resume and the custom answers you save.</p></div>
+      <div class="faq__row" data-reveal="text"><h3 class="t-lead col-a">Is my data completely safe?</h3><p class="col-b">It never leaves your device, but it is not encrypted by default. Anyone with access to your computer profile could read it, so keep that profile to yourself.</p></div>
+      <div class="faq__row" data-reveal="text"><h3 class="t-lead col-a">Does it work without internet?</h3><p class="col-b">Filling needs no internet of its own, and saving your details works offline. The job site itself still has to load.</p></div>
+      <div class="faq__row" data-reveal="text"><h3 class="t-lead col-a">What if it fills something wrong?</h3><p class="col-b">Every filled field is highlighted, a review list shows what happened, and Undo restores the form as it was.</p></div>
+    </section>
+
+    <section class="tide close" data-tide>
+      <div class="tide__stage">
+        <h2 class="tide__title t-display">
+          <span class="line line--t"><span>Type it one</span></span>
+          <span class="line line--l"><span>last time.</span></span>
+        </h2>
+        <div class="water" data-water aria-hidden="true">
+          <canvas class="ascii" data-ascii></canvas>
+          <p class="tide__title tide__title--under t-display">
+            <span class="line line--t"><span>Type it one</span></span>
+            <span class="line line--l"><span>last time.</span></span>
+          </p>
+        </div>
+        <a class="close__action button button--paper" href="{{CTA_HREF}}">{{CTA_LABEL}}</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot grid" data-ink="#0D0D1A">
+    <p class="col-a">Made by The SurfBoard, an independent software studio in Hyderabad.</p>
+    <div class="foot__end col-b"><a href="#top">Back to top</a><a href="https://thesurfboard.in">thesurfboard.in</a></div>
+    <p class="foot__name" aria-hidden="true">{{NAME}}</p>
+    <span class="col-a">No AI. No account. No server.</span>
+    <span class="col-b">Hyderabad, 2026</span>
+  </footer>
+
+  <script src="js/scrub.js" defer></script>
+  <script src="js/ascii-water.js" defer></script>
+  <script src="js/hero-water.js" defer></script>
+  <script src="js/field-demo.js" defer></script>
+  <script src="js/fill-scene.js" defer></script>
+  <script src="js/forms-scene.js" defer></script>
+  <script src="js/smooth-scroll.js" defer></script>
+  <script src="js/page-motion.js" defer></script>
+</body>
+</html>

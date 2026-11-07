@@ -1,0 +1,74 @@
+/* Finished composition first: this is what reduced motion and no script see.
+   The held, scrubbed version is layered on under .is-live, which only JS adds. */
+
+/* Fill scene: one form, watched through its four states. */
+.fill { background: var(--abyss); color: var(--white); padding-block: var(--section); row-gap: 3rem; }
+.fill__say { display: grid; gap: 3rem; align-content: start; }
+.beat { display: grid; gap: 1.25rem; }
+.beat p { max-width: 36ch; font-size: var(--step-lead); line-height: 1.42; }
+.fill__steps { display: none; }
+.fill__beats { display: grid; gap: 3rem; }
+.fill.is-live .fill__beats { gap: 0; }
+.forms__stage { display: grid; gap: 3rem; }
+.forms.is-live .forms__stage { gap: 0; }
+.fill__show { display: grid; place-items: center; align-self: start; }
+.win { width: 100%; background: var(--white); color: var(--ink); border-radius: var(--radius-large); padding: clamp(1.25rem, 2.4vw, 2rem); display: grid; gap: 0.75rem; }
+.win__title { font: 600 var(--step-lead)/1.32 var(--font-display); margin-bottom: 0.25rem; }
+.win__field { display: grid; gap: 0.25rem; transition: opacity 300ms ease; }
+.win__field > span { font: 500 var(--step-small)/1.45 var(--font-display); }
+.win__field > i { display: flex; align-items: center; min-height: 44px; padding: 0 0.875rem; border-radius: var(--radius); background: var(--paper); font-style: normal; font-size: var(--step-body); transition: background-color 250ms ease; }
+.win__field.is-filled > i { background: var(--pale); outline: 2px solid var(--ocean); outline-offset: -2px; }
+.win__field.is-needed > i { outline: 2px dashed var(--ink); outline-offset: -2px; }
+.win__field.is-away { opacity: 0; }
+.win__foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; min-height: 48px; margin-top: 0.25rem; }
+.win__status { font: 600 var(--step-body)/1.35 var(--font-display); color: var(--ocean); }
+.win__status.is-button { display: inline-flex; align-items: center; min-height: 44px; padding: 0 1rem; border-radius: var(--radius); background: var(--ocean); color: var(--white); }
+.win__submit { display: inline-flex; align-items: center; min-height: 44px; padding: 0 1rem; border-radius: var(--radius); background: var(--ink); color: var(--white); font: 500 var(--step-small)/1 var(--font-display); transition: opacity 300ms ease; }
+.win__submit.is-away { opacity: 0; }
+
+.fill.is-live { height: 420svh; padding: 0; display: block; }
+.fill.is-live .fill__stage { position: sticky; top: 0; height: 100svh; padding: 0 var(--margin); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: center; overflow: clip; }
+.fill.is-live .fill__say { grid-column: 1 / span 6; gap: 2rem; }
+.fill.is-live .fill__beats { display: grid; }
+.fill.is-live .beat { grid-area: 1 / 1; align-content: start; }
+.fill.is-live .beat .word > span { transform: translateY(112%); transition: transform 800ms var(--ease-expo); transition-delay: calc(var(--i) * 30ms); }
+.fill.is-live .beat .word { display: inline-block; overflow: clip; padding: 0 0.04em 0.14em; margin: 0 -0.04em -0.14em; vertical-align: top; }
+.fill.is-live .beat .word > span { display: inline-block; }
+.fill.is-live .beat p { opacity: 0; translate: 0 12px; transition: opacity 300ms ease, translate 500ms var(--ease-expo); }
+.fill.is-live .beat.is-on .word > span { transform: none; }
+.fill.is-live .beat.is-on p { opacity: 1; translate: 0 0; transition-delay: 150ms; }
+.fill.is-live .beat:not(.is-on) .word > span { transform: translateY(-112%); transition-delay: 0ms; transition-duration: 450ms; }
+.fill.is-live .fill__steps { display: flex; gap: 1.5rem; font: 500 var(--step-body)/1 var(--font-display); }
+.fill.is-live .fill__steps li { min-height: 28px; color: var(--pale); opacity: 0.55; transition: color 300ms ease, opacity 300ms ease; }
+.fill.is-live .fill__steps .is-on { color: var(--white); opacity: 1; }
+.fill.is-live .fill__show { grid-column: 7 / -1; align-self: center; }
+@media (max-width: 860px) {
+  .fill.is-live .fill__stage { align-content: start; align-items: start; padding-top: 4.75rem; row-gap: 1rem; }
+  .fill.is-live .fill__say, .fill.is-live .fill__show { grid-column: 1 / -1; }
+  .fill.is-live .fill__say { gap: 0.75rem; }
+  .fill.is-live .beat { gap: 0.5rem; }
+  .fill.is-live .beat p { font-size: var(--step-body); }
+  .fill.is-live .beat h2 { font-size: 2rem; }
+ .fill.is-live .win { gap: 0.5rem; padding: 1rem; }
+  .fill.is-live .fill__steps { order: -1; gap: 1rem; }
+}
+/* Short screens keep the story and drop two rows of the form, not the words. */
+@media (max-height: 780px) { .fill.is-live .win__field--extra { display: none; } }
+@media (max-height: 680px) and (max-width: 860px) { .fill.is-live .fill__stage { padding-top: 4.25rem; row-gap: 0.5rem; } .fill.is-live .beat p { font-size: var(--step-small); } .fill.is-live .win__title { display: none; } .fill.is-live .win { gap: 0.25rem; } .fill.is-live .win__field > i { min-height: 38px; } .fill.is-live .win__foot { margin-top: 0; } }
+
+/* Forms scene: one saved number, rewritten in place for each form that asks. */
+.forms { background: var(--ocean) var(--lit); color: var(--white); padding-block: var(--section); row-gap: 3rem; }
+.forms__list { display: grid; gap: 2.5rem; }
+.forms__item { display: grid; gap: 0.5rem; }
+.forms__ask { font: 600 var(--step-lead)/1.32 var(--font-display); }
+.forms__value { color: var(--white); margin-left: -0.03em; }
+.forms__note { max-width: 48ch; }
+
+.forms.is-live { height: 400svh; padding: 0; display: block; }
+.forms.is-live .forms__stage { position: sticky; top: 0; height: 100svh; padding: 6rem var(--margin) 3rem; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: auto 1fr auto; column-gap: var(--gutter); overflow: clip; }
+.forms.is-live .forms__head { grid-column: 1 / -1; }
+.forms.is-live .forms__list { grid-column: 1 / -1; align-self: center; display: grid; gap: 0; overflow: clip; margin-left: -0.5rem; padding-left: 0.5rem; }
+/* Room for the commas' tails, so a resting value never shows a sliver of its neighbour. */
+.forms.is-live .forms__item { grid-area: 1 / 1; padding-block: 0.25rem calc(var(--step-display) * 0.25); will-change: transform; }
+.forms.is-live .forms__note { grid-column: 7 / -1; }
+@media (max-width: 860px) { .forms.is-live .forms__note { grid-column: 1 / -1; } }
